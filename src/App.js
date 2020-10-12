@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Potato from "./Potato";
+
+function Potato() { //App.js 파일에 Potato 컴포넌트 포함시킴
+    return <h1>Potato</h1>;
+}
 
 function App() { 
     // App()함수 정의 > 해당 함수가 <div><img/><h1>The Movie App by Wandu</h1></div>를 반환.
