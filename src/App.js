@@ -2,10 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function Food(props) { //App.js 파일에 Potato 컴포넌트 포함시킴
-    console.log(props);
-    return <h1>Potato</h1>;
+function Food({fav}) { //App.js 파일에 Potato 컴포넌트 포함시킴
+    //console.log(props);
+    return <h1>Food: {fav}</h1>; //객체에 있는 값을 사용하기 위해 .(점 연산자) 사용 =>구조 분해 할당으로 사용시 . 안써도 ok
 }
+
+/*
+function Food(props) {
+    //console.log(props);
+    return <h1>{ props.fav }</h1>; //객체에 있는 값을 사용하기 위해 .(점 연산자) 사용
+}
+*/
 
 function App() { 
     // App()함수 정의 > 해당 함수가 <div><img/><h1>The Movie App by Wandu</h1></div>를 반환.
@@ -17,7 +24,10 @@ function App() {
     <div>
         <img src={logo} className="App-logo" alt="logo" />
             <h1>The Movie App by Wandu</h1>
-            <Food fav="Fried Chicken" something={true} data={['hello', 1, 2, 3, 4, true]}/>
+            <Food fav="fried Chicken"/>
+            <Food fav="pizza"/>
+            <Food fav="curry"/>
+            <Food fav="ramen"/>
     </div>
   );
 }
