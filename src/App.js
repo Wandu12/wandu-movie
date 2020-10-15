@@ -2,9 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function Food({fav}) { //App.js 파일에 Potato 컴포넌트 포함시킴
+function Food({name, picture}) { //App.js 파일에 Potato 컴포넌트 포함시킴
     //console.log(props);
-    return <h1>Food: {fav}</h1>; //객체에 있는 값을 사용하기 위해 .(점 연산자) 사용 =>구조 분해 할당으로 사용시 . 안써도 ok
+    return (
+        <div>
+            <h2>Food: {name}</h2>
+            <img src={picture} />
+        </div>
+    ); //객체에 있는 값을 사용하기 위해 .(점 연산자) 사용 =>구조 분해 할당으로 사용시 . 안써도 ok
 }
 
 const foodILike = [ //서버에서 데이터가 넘어왔다고 우선 가정함
@@ -38,7 +43,8 @@ function App() {
   return (
     <div>
         <img src={logo} className="App-logo" alt="logo" />
-            <h1>The Movie App by Wandu</h1>
+            <h1>Wandu</h1>
+        {foodILike.map(dish => (<Food name={dish.name} picture={dish.image}/>))}
     </div>
   );
 }
