@@ -7,6 +7,21 @@ function Food({fav}) { //App.js 파일에 Potato 컴포넌트 포함시킴
     return <h1>Food: {fav}</h1>; //객체에 있는 값을 사용하기 위해 .(점 연산자) 사용 =>구조 분해 할당으로 사용시 . 안써도 ok
 }
 
+const foodILike = [ //서버에서 데이터가 넘어왔다고 우선 가정함
+    {
+        name: 'Pizza',
+        image: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80',
+    },
+    {
+        name: 'Fried Chicken',
+        image: 'https://images.unsplash.com/photo-1594254916028-742dedb72062?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    },
+    {
+        name: 'Pasta',
+        image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    },
+];
+
 /*
 function Food(props) {
     //console.log(props);
@@ -24,10 +39,6 @@ function App() {
     <div>
         <img src={logo} className="App-logo" alt="logo" />
             <h1>The Movie App by Wandu</h1>
-            <Food fav="fried Chicken"/>
-            <Food fav="pizza"/>
-            <Food fav="curry"/>
-            <Food fav="ramen"/>
     </div>
   );
 }
