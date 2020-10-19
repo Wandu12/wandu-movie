@@ -27,6 +27,10 @@ const foodILike = [ //서버에서 데이터가 넘어왔다고 우선 가정함
     },
 ];
 
+function renderFood(dish) {
+    return <Food name={dish.name} picture={dish.image} />;
+}
+
 /*
 function Food(props) {
     //console.log(props);
@@ -40,11 +44,13 @@ function App() {
     
     // 리액트가 아래 <Potato />를 해석해서 <h3>Potato</h3>로 만들어줌
     // props를 이용해 컴포넌트에 데이터를 보낼 수 있음(문자열인 경우가 아니면 {중괄호}로 값을 감싸야 함)
+
+    console.log(foodILike.map(renderFood));
   return (
     <div>
         <img src={logo} className="App-logo" alt="logo" />
             <h1>Wandu</h1>
-        {foodILike.map(dish => (<Food name={dish.name} picture={dish.image}/>))}
+        {foodILike.map(renderFood)}
     </div>
   );
 }
